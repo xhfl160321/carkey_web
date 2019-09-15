@@ -22,17 +22,11 @@ router.post('/', function(req, res){
     }
     if(id!==user.userid){
         console.log('아이디 오류');
-        res.send(`
-        <form action="/" method="post" onsubmit="return confirm('아이디가 일치하지 않습니다.')">
-        </form>
-        `);
+        res.send('아이디가y 일치하지 않습니다 <a href="/">뒤로</a>');
     }
     if(pwd!==user.password){
         console.log('비밀번호 오류');
-        res.send(`
-        <form action="/" method="post" onsubmit="return confirm('비밀번호가 일치하지 않습니다.')">
-        </form>
-        `);
+        res.send('비밀번호가 일치하지 않습니다 <a href="/">뒤로</a>');
     }
 });
 
