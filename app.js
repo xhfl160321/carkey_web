@@ -5,6 +5,8 @@ const session = require('express-session'); //메모리 세션정보 저장 미�
 var longinRouter = require('./routes/login');
 var accessRouter = require('./routes/access');
 
+app.use(express.static('public'));
+
 app.get('/', function(req, res){
     res.redirect('/login');
 });
@@ -19,6 +21,7 @@ app.use(session ({
 
 app.use('/login', longinRouter);
 app.use('/access', accessRouter);
+
 
 app.listen(3000, function(req, res){
     console.log('server start');
