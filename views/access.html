@@ -39,6 +39,11 @@
             </style>
     </head>
     <body>
+        <div class="logoutform">
+            <ul>
+                <li><a href="/">Logout</a></li>
+            </ul>
+        </div>
         <div id="regist">
             <div id="form">
                 <form action="/access_process", method="post">
@@ -51,15 +56,13 @@
                     <br/>
                     <input type="text" name="car_num3">
                     <input type="submit" value="승인">
-                    <br/>
+                    <br/><br/>
+                    <input type="button" name="check" value="조회"> <!--조회 클릭시 db에서 값 받아옴-->
                 </form>
             </div>
         </div>
     </body>
 </html>
-
-
-
 
 <!-- <table width="300" style="table-layout: auto">
     <thead>
