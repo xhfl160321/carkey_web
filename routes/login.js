@@ -20,16 +20,30 @@ router.post('/', function(req, res){
     if(id===user.userid && pwd === user.password){
         res.redirect('/access');
     }
-    if(id!==user.userid){
+    else if(id!==user.userid){
         console.log('아이디 오류');
-        res.send('아이디가 일치하지 않습니다 <a href="/">뒤로</a>');
+        res.send(`
+        <script>
+            var result = confirm("아이디가 일치하지 않습니다.");
+
+            if(result){
+                location.href = "http://localhost:3000";
+            }
+        </script>
+        `);
     }
-    if(pwd!==user.password){
+    else if(pwd!==user.password){
         console.log('비밀번호 오류');
-        res.send('비밀번호가 일치하지 않습니다 <a href="/">뒤로</a>');
+        res.send(`
+        <script>
+            var result = confirm("비밀번호가 일치하지 않습니다.");
+
+            if(result){
+                location.href = "http://localhost:3000";
+            }
+        </script>
+        `);
     }
 });
-
-
 
 module.exports = router;

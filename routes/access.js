@@ -11,4 +11,9 @@ router.post('/access_process', function(req, res){
     console.log('승인 여부');
 });
 
+router.get('/logout', function(req, res){
+    delete req.session.userid;
+    res.redirect('/');
+});
+
 module.exports = router;
