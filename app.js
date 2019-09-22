@@ -11,6 +11,7 @@ var accessRouter = require('./routes/access');
 app.use(express.static('public')); //정적 파일 읽어오기
 
 app.get('/', function(req, res){
+    console.log('/', req.user);
     res.redirect('/login');
 });
 
