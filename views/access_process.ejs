@@ -58,19 +58,18 @@
                             <td>승인 여부</td>
                         </tr>
                         <tr>
-                            <td><input type="text" name="car_num1"></td>
-                            <td><input type="submit" value="승인" ></td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="car_num2"></td>
+                            <td><%= car_num1%></td>
                             <td><input type="submit" value="승인"></td>
                         </tr>
                         <tr>
-                            <td><input type="text" name="car_num3"></td>
+                            <td><%= car_num2%></td>
+                            <td><input type="submit" value="승인"></td>
+                        </tr>
+                        <tr>
+                            <td><%= car_num3%></td>
                             <td><input type="submit" value="승인"></td>
                         </tr>
                     </table>
-                    <input type="button" name="check" value="조회" onclick="location.href='/access_process'"> <!--조회 클릭시 db에서 값 받아옴-->
                 </form>
             </div>
         </div>
