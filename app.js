@@ -7,8 +7,11 @@ var passport = require('passport')
 var flash = require('connect-flash');
 var longinRouter = require('./routes/login');
 var accessRouter = require('./routes/access');
+var testrouter = require('./routes/test');
 
 app.use(express.static('public')); //정적 파일 읽어오기
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'ejs');
 
 app.get('/', function(req, res){
     console.log('/', req.user);
@@ -28,6 +31,7 @@ app.use(passport.session());
 
 app.use('/login', longinRouter);
 app.use('/access', accessRouter);
+app.use('/test', testrouter);
 
 app.listen(3000, function(req, res){
     console.log('server start');
