@@ -52,15 +52,3 @@ router.post('/', passport.authenticate('local', {
 }));
 
 module.exports = router;
-
-
-
-// res.send(`
-// <script>
-//     var result = confirm("비밀번호가 일치하지 않습니다.");
-
-//     if(result){
-//         location.href = "http://localhost:3000";
-//     }
-// </script>
-// `);
