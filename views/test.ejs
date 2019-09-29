@@ -6,22 +6,22 @@
   <h1>Firebase Test</h1>
   <p>Firebase console에 데이터가 추가 되었는지 확인하세요</p>
 <script>
-
   // Your web app's Firebase configuration
   var firebaseConfig = {
-    apiKey: "AIzaSyBTaq-nEHpQIh53hzUt3EZwyJ_XjRoZILM",
-    authDomain: "smart-key-db.firebaseapp.com",
-    databaseURL: "https://smart-key-db.firebaseio.com",
-    projectId: "smart-key-db",
+    apiKey: "AIzaSyAFdthbekWyczCysEHPi3UPXDCL3xO1QWU",
+    authDomain: "smart-car-key-db.firebaseapp.com",
+    databaseURL: "https://smart-car-key-db.firebaseio.com",
+    projectId: "smart-car-key-db",
     storageBucket: "",
-    messagingSenderId: "684171272477",
-    appId: "1:684171272477:web:7be60354d08195b45fc1f4"
+    messagingSenderId: "872279683761",
+    appId: "1:872279683761:web:af058a173e0188332ca890"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
    
   var SmartKey = firebase.database().ref().child('posts').push().key;
  
+  //안에있는 객체 :  각 키
   var postData = {
     no: SmartKey,
     carowner:"차주",
@@ -30,7 +30,7 @@
   };
  
   var updates = {};
-  updates['/carkey/' + SmartKey] = postData;
+  updates['/carkey/' + SmartKey] = postData;   //carkey : table 명
  
   firebase.database().ref().update(updates);
            
