@@ -5,7 +5,7 @@ var admin = require('firebase-admin');
 
 /* GET home page. */
 router.get('/',function(req, res, next) {
-  res.render('test', { title:'Express' });
+  res.render('../views/test', { title:'Express' });
   console.log('테스트 서버 시작');
 });
 
