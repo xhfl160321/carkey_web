@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>list sample for carkey</title>
+</head>
+<body>
+    <a href="/login">login</a>
+    <table border="1" style="width:600px" text-align="center">
+        <caption>carkey list</caption>
+        <colgroup>
+            <col width='8%'/>
+            <col width='15%'/>
+            <col width='*%'/>
+        </colgroup>
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>차주</th>
+                <th>차 번호</th>
+                <th>날짜</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%
+                for(var i=0; i<rows.length; i++){
+            %>
+                <tr>
+                    <td><%=rows.length-i%></td>
+                    <td><%=rows[i].carowner%></td>
+                    <td><%=rows[i].carnum%></td>
+                    <td><%=rows[i].brddate%></td>
+                </tr>   
+            <%         
+                }
+            %>
+        </tbody>
+    </table>
+</body>
+</html>
