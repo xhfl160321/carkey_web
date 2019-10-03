@@ -17,7 +17,7 @@ passport.serializeUser(function(user, done){
 });
 //reload 할 때 마다 호출됨
 passport.deserializeUser(function(id, done){
-    console.log('deserializeUser', id);
+    // console.log('deserializeUser', id);
     done(null, manager);
 });
 
@@ -27,7 +27,6 @@ passport.use(new LocalStrategy({
 }, function(username, password, done){
     if(username===manager.userid && password === manager.password){
         console.log('로그인 성공');
-        // res.redirect('/access');
         return done(null, manager);
     }
     else if(username!==manager.userid){
@@ -46,9 +45,21 @@ router.get('/', function(req, res){
 });
 
 router.post('/', passport.authenticate('local', {
-    successRedirect : '/access',
+    successRedirect : '/check_form',
     failureRedirect : '/',
     failureFlash : true
 }));
 
 module.exports = router;
+
+
+
+// res.send(`
+// <script>
+//     var result = confirm("비밀번호가 일치하지 않습니다.");
+
+//     if(result){
+//         location.href = "http://localhost:3000";
+//     }
+// </script>
+// `);
