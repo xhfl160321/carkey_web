@@ -6,3 +6,6 @@
 
 npm install -g firebase-tools
 npm install firebase-admin --save
+
+같은 key 값에 데이터 추가하기
+권한 허용 방법
