@@ -6,9 +6,9 @@ var passport = require('passport')
     , LocalStrategy = require('passport-local').Strategy;
 var flash = require('connect-flash');
 var longinRouter = require('./routes/login');
-var check_formRouter = require('./routes/check_form');
-var insert_dbRouter = require('./routes/insert_db');
-var check_listRouter = require('./routes/check_list');
+var checkFormRouter = require('./routes/checkForm');
+var insertDBRouter = require('./routes/insertDB');
+var checkListRouter = require('./routes/checkList');
 
 app.use(express.static('public')); //정적 파일 읽어오기
 app.engine('html', require('ejs').renderFile);
@@ -32,9 +32,9 @@ app.use(passport.session());
 app.use(flash());
 
 app.use('/login', longinRouter);
-app.use('/check_form', check_formRouter);
-app.use('/insert_db', insert_dbRouter);
-app.use('/check_list', check_listRouter);
+app.use('/checkForm', checkFormRouter);
+app.use('/insertDB', insertDBRouter);
+app.use('/checkList', checkListRouter);
 
 app.listen(3000, function(req, res){
     console.log('server start');
