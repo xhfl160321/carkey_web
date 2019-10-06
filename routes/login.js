@@ -45,7 +45,7 @@ router.get('/', function(req, res){
 });
 
 router.post('/', passport.authenticate('local', {
-    successRedirect : '/check_form',
+    successRedirect : '/checkForm',
     failureRedirect : '/',
     failureFlash : true
 }));
