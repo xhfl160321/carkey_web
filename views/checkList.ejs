@@ -78,7 +78,17 @@
                                     <td><%=rows[i].carowner%></td>
                                     <td><%=rows[i].carnum%></td>
                                     <td><%=rows[i].cdate%></td>
-                                    <td><input type="button" value="허용" onclick="location.href='/checkList/permit'"></td>
+                                    <td><input type="submit" value="허용" onclick="permit()">
+                                        <script type="text/javascript">
+                                            function permit(){
+                                                if(confirm('권한을 허용하시겠습니까?')){     
+                                                    alert("권한이 승인되었습니다.", true);
+                                                }else{
+                                                    alert("권한이 거부되었습니다.", false);
+                                                }
+                                            }
+                                        </script>
+                                    </td>
                                 </tr>   
                             <%         
                                 }
