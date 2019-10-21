@@ -41,7 +41,7 @@ router.get('/', isAuthenticated ,function(req, res, next){
 router.post('/', isAuthenticated ,function(req, res, next){
     var showkey = firebase.database().ref('/carkey/')
     showkey.on('child_added', function(data){
-        console.log(data.val(), 'key: ', data.key);
+        // console.log(data.val(), 'key: ', data.key);
 
         changeDB = firebase.database().ref('/carkey/'+data.key).update({
             permit: true

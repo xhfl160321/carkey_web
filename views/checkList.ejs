@@ -72,32 +72,49 @@
                         <tbody>
                             <%
                                 for(var i=0; i<rows.length; i++){
-                            %>
+                            %>  
                                 <tr>
                                     <td><%=rows.length-i%></td>
                                     <td><%=rows[i].carowner%></td>
                                     <td><%=rows[i].carnum%></td>
                                     <td><%=rows[i].cdate%></td>
-                                    <td><input type="submit" value="허용" onclick="permit()">
-                                        <script type="text/javascript">
-                                            function permit(){
-                                                if(confirm('권한을 허용하시겠습니까?')){     
-                                                    alert("권한이 승인되었습니다.", true);
-                                                }else{
-                                                    alert("권한이 거부되었습니다.", false);
-                                                }
+                                    <td>
+                                        <%
+                                            if (rows[i].permit) {
+                                        %>
+                                            <input type="text" name="complete" value="완료" style="text-align:center; width:80px;" readonly="readonly">
+                                        <%       
+                                            } else {
+                                        %>
+                                            <input type="submit" name="permit" value="허용" onclick="permit('<%=rows[i].key%>', true)">
+                                        <%
                                             }
-                                        </script>
+                                        %>
                                     </td>
                                 </tr>   
                             <%         
                                 }
-                            %>
+                            %>                            
                         </tbody>
                     </table>
                     <br/><input type="button" name="checkList" value="조회" onclick="location.href='/checkList'"> <!--조회 클릭시 db에서 값 받아옴-->
                 </form>
             </div>
         </div>
+
+        <script type="text/javascript">
+            function permit(key, permit){
+                //안에있는 객체 :  데이터
+                var postData = {
+                    permit: permit
+                };
+                
+                var updates = {};
+                updates['/carkey/' + key] = postData;   //carkey : table 명, 키값
+                
+                firebase.database().ref().update(updates);
+            }
+        </script>
+
     </body>
 </html>

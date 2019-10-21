@@ -17,7 +17,7 @@ passport.serializeUser(function(user, done){
 });
 //reload 할 때 마다 호출됨
 passport.deserializeUser(function(id, done){
-    console.log('deserializeUser', id);
+    // console.log('deserializeUser', id);
     done(null, manager);
 });
 
@@ -51,3 +51,15 @@ router.post('/', passport.authenticate('local', {
 }));
 
 module.exports = router;
+
+
+
+// res.send(`
+// <script>
+//     var result = confirm("비밀번호가 일치하지 않습니다.");
+
+//     if(result){
+//         location.href = "http://localhost:3000";
+//     }
+// </script>
+// `);
