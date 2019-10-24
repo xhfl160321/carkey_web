@@ -41,6 +41,21 @@
                 font-family: 'Nanum Brush Script', cursive;
             }
             </style>
+            <script type="text/javascript">
+                function permit(data, permit2){
+                    console.log(data.key);
+                    console.log(permit2);
+        
+                    //안에있는 객체 :  데이터
+                    var postData = {
+                        permit: permit2
+                    };
+                    
+                    var updates = {};
+                    //updates['/carkey/' + key] = postData;   //carkey : table 명, 키값                
+                    //firebase.database().ref().update(updates);
+                }
+            </script>
     </head>
     <body>
         <div class="logoutform">
@@ -86,7 +101,7 @@
                                         <%       
                                             } else {
                                         %>
-                                            <input type="submit" name="permit" value="허용" onclick="permit('<%=rows[i].key%>', true)">
+                                            <input type="submit" name="permit3" value="허용" onclick="permit('rows[i].data.key', true)">
                                         <%
                                             }
                                         %>
@@ -102,19 +117,7 @@
             </div>
         </div>
 
-        <script type="text/javascript">
-            function permit(key, permit){
-                //안에있는 객체 :  데이터
-                var postData = {
-                    permit: permit
-                };
-                
-                var updates = {};
-                updates['/carkey/' + key] = postData;   //carkey : table 명, 키값
-                
-                firebase.database().ref().update(updates);
-            }
-        </script>
+        
 
     </body>
 </html>
