@@ -27,8 +27,11 @@ router.get('/', isAuthenticated ,function(req, res, next){
     firebase.database().ref('carkey').orderByKey().once('value', function(snapshot){
         var rows = [];
         snapshot.forEach(function(childSnapshot){
+            //var key = childSnapshot.key;
+            //console.log(key)
             var childData = childSnapshot.val();
             childData.cdate = dateFormat(childData.cdate, "yyyy-mm-dd");
+            childData.key = childSnapshot.key;
             rows.push(childData);
         });
         console.log('firebase에서 db 가져오기');
@@ -40,10 +43,8 @@ router.get('/', isAuthenticated ,function(req, res, next){
 
 router.post('/', isAuthenticated ,function(req, res, next){
     var showkey = firebase.database().ref('/carkey/')
-    showkey.on('child_added', function(data){
-        // console.log(data.val(), 'key: ', data.key);
-
-        changeDB = firebase.database().ref('/carkey/'+data.key).update({
+    showkey.on('child_added', function(childSnapshot){
+        changeDB = firebase.database().ref('/carkey/'+childSnapshot.key).update({
             permit: true
         });
     });

@@ -42,19 +42,18 @@
             }
             </style>
             <script type="text/javascript">
-                function permit(data, permit2){
-                    console.log(data.key);
-                    console.log(permit2);
-        
+                function permission(key, permit2){        
                     //안에있는 객체 :  데이터
                     var postData = {
                         permit: permit2
                     };
                     
                     var updates = {};
-                    //updates['/carkey/' + key] = postData;   //carkey : table 명, 키값                
-                    //firebase.database().ref().update(updates);
-                }
+                    // updates['/carkey/' + key] = postData;   //carkey : table 명, 키값                
+                    // firebase.database().ref().update(updates);
+                    console.log(key);
+                    console.log(permit2);
+                };
             </script>
     </head>
     <body>
@@ -97,11 +96,11 @@
                                         <%
                                             if (rows[i].permit) {
                                         %>
-                                            <input type="text" name="complete" value="완료" style="text-align:center; width:80px;" readonly="readonly">
+                                            <input type="text" name="<%=rows[i].key%>" value="완료" style="text-align:center; background-color: transparent;border:0; width:80px;" readonly="readonly">
                                         <%       
                                             } else {
                                         %>
-                                            <input type="submit" name="permit3" value="허용" onclick="permit('rows[i].data.key', true)">
+                                            <input type="submit" name="<%=rows[i].key%>" value="허용" onclick="permission('<%=rows[i].key%>', true)">
                                         <%
                                             }
                                         %>
