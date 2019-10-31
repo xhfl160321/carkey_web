@@ -8,3 +8,7 @@
 db추가 후 허용 -> 정상 작동
 허용 된 후 다시 db 추가 할 경우 permit값이 true로 고정됨 //서버를 재시작 할 때는 정상작동
 여러 데이터가 추가 되었을 때 하나의 허용 버튼만 눌러도 전부 true로 바뀜
+
+
+nodemon
+https://m.blog.naver.com/PostView.nhn?blogId=pxkey&logNo=221275249310&proxyReferer=https%3A%2F%2Fwww.google.com%2F
