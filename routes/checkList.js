@@ -43,14 +43,25 @@ router.get('/', isAuthenticated ,function(req, res, next){
 
 router.post('/', isAuthenticated ,function(req, res, next){
     var showkey = firebase.database().ref('/carkey/')
-    showkey.on('child_added', function(childSnapshot){
-        changeDB = firebase.database().ref('/carkey/'+childSnapshot.key).update({
-            permit: true
-        });
-    });
+    // showkey.on('child_added', function(childSnapshot){
+    //     changeDB = firebase.database().ref('/carkey/'+childSnapshot.key).update({
+    //         permit: true
+    //     });
+    // });
     console.log('데이터 수정 확인');
 });
 
+router.post('/update/permit', function(req, res){
+    // delete req.session.userid;
+    // res.redirect('/');
+    console.log(req.body.key)
+    firebase.database().ref("/carkey/"+req.body.key).update({
+        permit:true
+    })
+    res.json({
+        result:"ok"
+    })
+});
 router.get('/logout', function(req, res){
     delete req.session.userid;
     res.redirect('/');

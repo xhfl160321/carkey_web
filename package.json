@@ -1,0 +1,36 @@
+{
+  "name": "carkey_server",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000c\u0000a\u0000r\u0000k\u0000e\u0000y\u0000_\u0000w\u0000e\u0000b\u0000\r\u0000 \u0000\r\u0000 \u0000n\u0000p\u0000m\u0000 \u0000i\u0000n\u0000s\u0000t\u0000a\u0000l\u0000l\u0000 \u0000-\u0000g\u0000 \u0000f\u0000i\u0000r\u0000e\u0000b\u0000a\u0000s\u0000e\u0000-\u0000t\u0000o\u0000o\u0000l\u0000s\u0000\r\u0000 \u0000n\u0000p\u0000m\u0000 \u0000i\u0000n\u0000s\u0000t\u0000a\u0000l\u0000l\u0000 \u0000f\u0000i\u0000r\u0000e\u0000b\u0000a\u0000s\u0000e\u0000-\u0000a\u0000d\u0000m\u0000i\u0000n\u0000 \u0000-\u0000-\u0000s\u0000a\u0000v\u0000e\u0000\r\u0000 \u0000\r\u0000 \u0000d\u0000b\u0000��\u0000� \u0000�� \u0000�թ� \u0000-\u0000>\u0000 \u0000\u0015��� \u0000��ٳ\r\u0000 \u0000�թ� \u0000\u001c� \u0000�� \u0000��� \u0000d\u0000b\u0000 \u0000��\u0000� \u0000`� \u0000���� \u0000p\u0000e\u0000r\u0000m\u0000i\u0000t\u0000\u0012�t� \u0000t\u0000r\u0000u\u0000e\u0000\\� \u0000�\u0015�(� \u0000/\u0000/\u0000\u001c���|� \u0000���� \u0000`� \u0000L��� \u0000\u0015�����ٳ\r\u0000 \u0000��� \u0000p�t�0�\u0000� \u0000��\u0000� \u0000\u0018���D� \u0000L� \u0000X՘�X� \u0000�թ� \u0000����̹ \u0000\f��ĳ \u0000\u0004Ȁ� \u0000t\u0000r\u0000u\u0000e\u0000\\� \u0000\u0014�\u001c�",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "dateformat": "^3.0.3",
+    "ejs": "^2.7.1",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "firebase": "^6.6.2",
+    "firebase-admin": "^8.6.0",
+    "fsevents": "^1.2.9",
+    "nodemon": "^1.19.4",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./bin/nodemon.js",
+    "start:dev": "nodemon --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xhfl160321/carkey_web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xhfl160321/carkey_web/issues"
+  },
+  "homepage": "https://github.com/xhfl160321/carkey_web#readme"
+}
