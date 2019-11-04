@@ -44,14 +44,11 @@
             </style>
             <script type="text/javascript">
                 function permission(key, permit2){        
-                    //안에있는 객체 :  데이터
                     var postData = {
                         permit: permit2
                     };
                     
                     var updates = {};
-                    // updates['/carkey/' + key] = postData;   //carkey : table 명, 키값                
-                    // firebase.database().ref().update(updates);
                     console.log(key);
                     console.log(permit2);
                     axios.post("/checkList/update/permit",{
@@ -59,10 +56,7 @@
                     })
                     .then((result)=>{
                         location.reload()
-                    })
-                    // firebase.database().ref("/carkey/"+key).update({
-                    //     permit:true
-                    // })
+                    });
                 };
             </script>
     </head>
@@ -125,8 +119,5 @@
                 </form>
             </div>
         </div>
-
-        
-
     </body>
 </html>

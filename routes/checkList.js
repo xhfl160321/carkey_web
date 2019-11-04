@@ -34,34 +34,25 @@ router.get('/', isAuthenticated ,function(req, res, next){
             childData.key = childSnapshot.key;
             rows.push(childData);
         });
-        console.log('firebase에서 db 가져오기');
+        console.log('firebase에서 데이터 가져오기');
         res.render('../views/checkList.ejs', {rows: rows});
     }, function(err){
         throw err;
     });
 });
 
-router.post('/', isAuthenticated ,function(req, res, next){
-    var showkey = firebase.database().ref('/carkey/')
-    // showkey.on('child_added', function(childSnapshot){
-    //     changeDB = firebase.database().ref('/carkey/'+childSnapshot.key).update({
-    //         permit: true
-    //     });
-    // });
-    console.log('데이터 수정 확인');
-});
-
-router.post('/update/permit', function(req, res){
-    // delete req.session.userid;
-    // res.redirect('/');
-    console.log(req.body.key)
+router.post('/update/permit',  isAuthenticated, function(req, res, next){
+    // console.log(req.body.key)
     firebase.database().ref("/carkey/"+req.body.key).update({
         permit:true
-    })
+    });
     res.json({
         result:"ok"
-    })
+    });
+    console.log('permit 수정 확인');
+    console.log(req.body.key, ':', req.body.key.permit);
 });
+
 router.get('/logout', function(req, res){
     delete req.session.userid;
     res.redirect('/');
