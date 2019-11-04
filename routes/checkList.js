@@ -42,7 +42,6 @@ router.get('/', isAuthenticated ,function(req, res, next){
 });
 
 router.post('/update/permit',  isAuthenticated, function(req, res, next){
-    // console.log(req.body.key)
     firebase.database().ref("/carkey/"+req.body.key).update({
         permit:true
     });
@@ -50,7 +49,7 @@ router.post('/update/permit',  isAuthenticated, function(req, res, next){
         result:"ok"
     });
     console.log('permit 수정 확인');
-    console.log(req.body.key, ':', req.body.key.permit);
+    console.log(req.body.key, ':', req.body.permit2);
 });
 
 router.get('/logout', function(req, res){

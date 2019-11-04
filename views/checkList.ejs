@@ -52,7 +52,8 @@
                     console.log(key);
                     console.log(permit2);
                     axios.post("/checkList/update/permit",{
-                        key:key
+                        key:key,
+                        permit2:permit2
                     })
                     .then((result)=>{
                         location.reload()
